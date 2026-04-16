@@ -1,3 +1,8 @@
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+app.get('/', (req,res)=>res.send('MavGrab running'));
+app.listen(PORT, ()=>console.log('Server running'));
 const TelegramBot = require('node-telegram-bot-api');
 const axios = require('axios');
 const TOKEN = process.env.BOT_TOKEN;
@@ -42,3 +47,4 @@ async function handleInstagram(chatId, url) {
     bot.sendMessage(chatId, "? Error while downloading.");
   }
 }
+
